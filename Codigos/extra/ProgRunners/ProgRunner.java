@@ -43,7 +43,7 @@ public class ProgRunner {
 
     public String exibirCategoriaCorredor(String cpf){
         for (Corredor i: this.corredores){
-            if (i.getCpf() == cpf){
+            if (i.getCpf().equals(cpf)){
                 return i.getCategoria();
             }
         } return "Não esta presente na lista de Corredores!";
@@ -53,7 +53,7 @@ public class ProgRunner {
         int tamanho = 0;
         if (this.corredores != null){
             for (Corredor i: this.corredores){
-                if (i.getCpf() == cpf){
+                if (i.getCpf().equals(cpf)){
                     Treino treino = new Treino(distancia, tempoEsperado, descricao);
                     if (i.getTreinos() != null){
                         tamanho = i.getTreinos().length+1;

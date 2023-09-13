@@ -1,9 +1,9 @@
 package Multidelivery;
 
 public class Delivery {
-    private String produto;
-    private String fornecedor;
-    private int idCliente;
+    private final String produto;
+    private final String fornecedor;
+    private final int idCliente;
     private String status;
 
     public Delivery(String produto, String fornecedor, int idCliente){
@@ -22,8 +22,8 @@ public class Delivery {
 
     @Override
     public boolean equals(Object obj) {
-        if (((Delivery)obj).getProduto() == this.produto){
-            if (((Delivery)obj).getFornecedor() == this.fornecedor){
+        if (((Delivery)obj).getProduto().equals(this.produto)){
+            if (((Delivery)obj).getFornecedor().equals(this.fornecedor)){
                 if (((Delivery)obj).getIdCliente() == this.idCliente){
                     return true;
                 }

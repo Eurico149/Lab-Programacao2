@@ -1,9 +1,9 @@
 package ProgRunners;
 
 public class Corredor {
-    private String cpf;
-    private String nome;
-    private int anoNascimento;
+    private final String cpf;
+    private final String nome;
+    private final int anoNascimento;
     private String categoria;
     private Treino[] treinos;
 
@@ -46,7 +46,7 @@ public class Corredor {
 
     @Override
     public boolean equals(Object obj) {
-        if (((Corredor)obj).getCpf() == this.cpf){
+        if (((Corredor)obj).getCpf().equals(this.cpf)){
             return true;
         } return false;
     }
@@ -54,8 +54,7 @@ public class Corredor {
     @Override
     public String toString() {
         setCategoria();
-        String str = "%s - %s - %s".formatted(this.nome, this.cpf, this.categoria);
-        return str;
+        return "%s - %s - %s".formatted(this.nome, this.cpf, this.categoria);
     }
 
 }

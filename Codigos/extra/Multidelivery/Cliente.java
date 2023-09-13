@@ -1,8 +1,8 @@
 package Multidelivery;
 
 public class Cliente {
-    private int id;
-    private String nome;
+    private final int id;
+    private final String nome;
     private String endereco;
 
     public Cliente(int id, String nome, String end) {

@@ -1,10 +1,10 @@
 package ProgRunners;
 
 public class Treino {
-    private double distancia;
-    private int tempo_esperado;
+    private final double distancia;
+    private final int tempo_esperado;
     private int tempo_gasto;
-    private String descricao;
+    private final String descricao;
     private String status;
 
     public Treino(double distancia, int tempoEsperado, String descricao){

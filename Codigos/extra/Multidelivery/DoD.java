@@ -37,13 +37,16 @@ public class DoD {
         String str = "";
         for (Delivery i: this.entregas){
             if (i != null){
-                str += i.toString() + "\n";}
+                str += i + "\n";}
         }
         return str;
     }
 
     public boolean finishDelivery(int pos){
-        if (this.entregas[pos].getStatus() == "finished"){
+        if (pos >= this.entregas.length || this.entregas[pos] == null){
+            throw new IllegalArgumentException("Posicao Invalida!");
+        }
+        if (this.entregas[pos].getStatus().equals("finished")){
             return false;
         }
         this.entregas[pos].setStatus("finished");
@@ -54,8 +57,8 @@ public class DoD {
         String str = "";
         for (Delivery i: this.entregas){
             if (i != null) {
-                if (i.getStatus() == "finished") {
-                    str += i.toString() + "\n";
+                if (i.getStatus().equals("finished")) {
+                    str += i + "\n";
                 }
             }
         } return str;
